@@ -171,11 +171,7 @@ http://localhost:3000/api-docs
 
 ## 📜 License
 
-This project is licensed under the ISC License.
-
-## 👨‍💻 Developers
-
-- Developer Information
+This project is licensed under the MIT License.
 
 ## 📞 Contact & Support
 
