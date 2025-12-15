@@ -1,53 +1,53 @@
 # 🏠 Divar API
 
-یک API مدرن برای پلتفرم اشتراک‌گذاری ملک‌های مسکونی و تجاری (الهام گرفته از Divar)
+A modern API for a residential and commercial property sharing platform (inspired by Divar)
 
-## 📋 فهرست مطالب
+## 📋 Table of Contents
 
-- [ویژگی‌ها](#ویژگی‌ها)
-- [نیازمندی‌ها](#نیازمندی‌ها)
-- [نصب و راه‌اندازی](#نصب-و-راه‌اندازی)
-- [ساختار پروژه](#ساختار-پروژه)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation & Setup](#installation--setup)
+- [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
-- [متغیرهای محیطی](#متغیرهای-محیطی)
-- [توسعه](#توسعه)
+- [Environment Variables](#environment-variables)
+- [Development](#development)
 
-## ✨ ویژگی‌ها
+## ✨ Features
 
-- ✅ احراز هویت و مدیریت کاربران
-- ✅ مدیریت دسته‌بندی‌ها (Category)
-- ✅ مدیریت اعلانات/پست‌ها
-- ✅ سیستم گزینه‌های منعطف (Options)
-- ✅ API Documentation با Swagger
-- ✅ Database MongoDB
-- ✅ Upload فایل و عکس
-- ✅ مدیریت خطاها (Exception Handling)
+- ✅ Authentication and User Management
+- ✅ Category Management
+- ✅ Post/Announcement Management
+- ✅ Flexible Options System
+- ✅ Swagger API Documentation
+- ✅ MongoDB Database
+- ✅ File and Image Upload
+- ✅ Exception Handling
 
-## 🔧 نیازمندی‌ها
+## 🔧 Requirements
 
 - **Node.js** >= 14.x
 - **npm** >= 6.x
 - **MongoDB** >= 4.x
 - **Git**
 
-## 📦 نصب و راه‌اندازی
+## 📦 Installation & Setup
 
-### 1️⃣ Clone کردن Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/rjs-divar-api.git
 cd rjs-divar-api
 ```
 
-### 2️⃣ نصب Dependencies
+### 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3️⃣ تنظیم متغیرهای محیطی
+### 3️⃣ Setup Environment Variables
 
-یک فایل `.env` در ریشه پروژه ایجاد کنید:
+Create a `.env` file in the root of the project:
 
 ```env
 # Server Config
@@ -69,114 +69,114 @@ MAX_FILE_SIZE=5242880
 UPLOAD_DIR=./public/upload
 ```
 
-### 4️⃣ شروع سرور
+### 4️⃣ Start the Server
 
 ```bash
 npm start
 ```
 
-سرور در پورت `3000` شروع می‌شود.
+The server will start on port `3000`.
 
-## 📁 ساختار پروژه
+## 📁 Project Structure
 
 ```
 src/
-├── modules/              # ماژول‌های اصلی
-│   ├── auth/            # احراز هویت
-│   ├── user/            # مدیریت کاربران
-│   ├── category/        # دسته‌بندی‌ها
-│   ├── post/            # اعلانات/پست‌ها
-│   └── option/          # گزینه‌های سیستم
-├── config/              # فایل‌های پیکربندی
-├── common/              # کدهای مشترک
-│   ├── constant/        # ثابت‌ها
-│   ├── exception/       # مدیریت خطاها
+├── modules/              # Core modules
+│   ├── auth/            # Authentication
+│   ├── user/            # User Management
+│   ├── category/        # Categories
+│   ├── post/            # Posts/Announcements
+│   └── option/          # System Options
+├── config/              # Configuration Files
+├── common/              # Shared Code
+│   ├── constant/        # Constants
+│   ├── exception/       # Error Handling
 │   ├── guard/           # Authorization Guards
-│   ├── messages/        # پیام‌های سیستم
-│   └── utils/           # توابع کمکی
-├── app.routes.js        # تعریف روت‌های اصلی
+│   ├── messages/        # System Messages
+│   └── utils/           # Utility Functions
+├── app.routes.js        # Main Routes Definition
 └── ...
 
-public/                  # فایل‌های static
-├── assets/              # CSS, JS, تصاویر
-├── html/                # صفحات HTML
-└── upload/              # فایل‌های آپلود شده
+public/                  # Static Files
+├── assets/              # CSS, JS, Images
+├── html/                # HTML Pages
+└── upload/              # Uploaded Files
 ```
 
 ## 🔌 API Endpoints
 
 ### 🔐 Authentication
 
-- `POST /api/auth/login` - ورود
-- `POST /api/auth/register` - ثبت‌نام
-- `POST /api/auth/logout` - خروج
+- `POST /api/auth/login` - User Login
+- `POST /api/auth/register` - User Registration
+- `POST /api/auth/logout` - User Logout
 
 ### 👤 Users
 
-- `GET /api/users` - لیست کاربران
-- `GET /api/users/:id` - جزئیات کاربر
-- `PUT /api/users/:id` - ویرایش کاربر
-- `DELETE /api/users/:id` - حذف کاربر
+- `GET /api/users` - Get All Users
+- `GET /api/users/:id` - Get User Details
+- `PUT /api/users/:id` - Update User
+- `DELETE /api/users/:id` - Delete User
 
 ### 📂 Categories
 
-- `GET /api/categories` - لیست دسته‌بندی‌ها
-- `POST /api/categories` - ایجاد دسته‌بندی
-- `PUT /api/categories/:id` - ویرایش دسته‌بندی
-- `DELETE /api/categories/:id` - حذف دسته‌بندی
+- `GET /api/categories` - Get All Categories
+- `POST /api/categories` - Create Category
+- `PUT /api/categories/:id` - Update Category
+- `DELETE /api/categories/:id` - Delete Category
 
 ### 📰 Posts
 
-- `GET /api/posts` - لیست اعلانات
-- `POST /api/posts` - ایجاد اعلان
-- `GET /api/posts/:id` - جزئیات اعلان
-- `PUT /api/posts/:id` - ویرایش اعلان
-- `DELETE /api/posts/:id` - حذف اعلان
+- `GET /api/posts` - Get All Posts
+- `POST /api/posts` - Create Post
+- `GET /api/posts/:id` - Get Post Details
+- `PUT /api/posts/:id` - Update Post
+- `DELETE /api/posts/:id` - Delete Post
 
 ### ⚙️ Options
 
-- `GET /api/options` - لیست گزینه‌ها
-- `POST /api/options` - ایجاد گزینه
-- `PUT /api/options/:id` - ویرایش گزینه
-- `DELETE /api/options/:id` - حذف گزینه
+- `GET /api/options` - Get All Options
+- `POST /api/options` - Create Option
+- `PUT /api/options/:id` - Update Option
+- `DELETE /api/options/:id` - Delete Option
 
-## 🔐 متغیرهای محیطی
+## 🔐 Environment Variables
 
-| متغیر           | توضیح             | نمونه                           |
-| --------------- | ----------------- | ------------------------------- |
-| `PORT`          | پورت سرور         | 3000                            |
-| `NODE_ENV`      | محیط اجرایی       | development/production          |
-| `MONGO_URI`     | اتصال MongoDB     | mongodb://localhost:27017/divar |
-| `JWT_SECRET`    | کلید رمزگذاری JWT | your-secret-key                 |
-| `JWT_EXPIRE`    | مدت اعتبار JWT    | 7d                              |
-| `COOKIE_EXPIRE` | مدت اعتبار Cookie | 7                               |
+| Variable        | Description         | Example                         |
+| --------------- | ------------------- | ------------------------------- |
+| `PORT`          | Server Port         | 3000                            |
+| `NODE_ENV`      | Environment Mode    | development/production          |
+| `MONGO_URI`     | MongoDB Connection  | mongodb://localhost:27017/divar |
+| `JWT_SECRET`    | JWT Secret Key      | your-secret-key                 |
+| `JWT_EXPIRE`    | JWT Expiration Time | 7d                              |
+| `COOKIE_EXPIRE` | Cookie Expiration   | 7                               |
 
-## 🧪 توسعه
+## 🧪 Development
 
-### اجرای سرور به‌صورت Watch Mode
+### Running Server in Watch Mode
 
 ```bash
 npm start
 ```
 
-سرور به‌صورت خودکار پس از تغییرات فایل‌ها راه‌اندازی مجدد می‌شود (nodemon).
+The server will automatically restart when files are modified (using nodemon).
 
-### مشاهده Swagger Documentation
+### View Swagger Documentation
 
-پس از شروع سرور، به آدرس زیر بروید:
+After starting the server, visit:
 
 ```
 http://localhost:3000/api-docs
 ```
 
-## 📜 لایسنس
+## 📜 License
 
-این پروژه تحت لایسنس ISC منتشر شده است.
+This project is licensed under the ISC License.
 
-## 👨‍💻 توسعه‌دهندگان
+## 👨‍💻 Developers
 
-- اطلاعات توسعه‌دهندگان
+- Developer Information
 
-## 📞 تماس و پشتیبانی
+## 📞 Contact & Support
 
-برای سوالات و گزارش مسائل، لطفاً یک Issue باز کنید.
+For questions and bug reports, please open an Issue.
